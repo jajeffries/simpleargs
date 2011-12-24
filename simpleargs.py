@@ -1,3 +1,4 @@
+#!/usr/env python
 import sys
 
 __all__ = ["SimpleArgParser"]
@@ -23,18 +24,18 @@ class SimpleArgParser(object):
 if __name__ == "__main__":
 	parser = SimpleArgParser(description="A command line string formatter")
 	parser.addArg('-r',
-				  dest="rangeMode",
-			  	  action="store_true", 
-				  default=False,
-				  help="run in range mode")
+		      dest="rangeMode",
+		      action="store_true", 
+		      default=False,
+		      help="run in range mode")
 	parser.addArg('-f',
-						dest="fmt",
-						action="store",
-				help="string format")
+		      dest="fmt",
+		      action="store",
+		      help="string format")
 	parser.addArg('-a',
-				  dest="fmtArgs",
-				  action="store",
-				  help="arguments for string format")
+		      dest="fmtArgs",
+		      action="store",
+		      help="arguments for string format")
 	parser.addArg('-v', '--version', action='version')
 
 	args = parser.parseArgs(sys.argv[1:])
